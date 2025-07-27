@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Header = () => {
+  // Access cart items from Redux store
   const cart = useSelector((state) => state.cart.items);
 
   return (
     <header className="bg-blue-600 text-white p-4 flex justify-between items-center">
+      {/* Site logo */}
       <h1 className="text-xl font-bold">ShoppyGlobe</h1>
 
+      {/* Navigation links */}
       <div className="flex items-center gap-4">
         <Link
           to="/"
@@ -29,4 +32,5 @@ const Header = () => {
 };
 
 export default Header;
+
 

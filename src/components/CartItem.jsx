@@ -6,12 +6,17 @@ const CartItem = ({ item }) => {
 
   return (
     <div className="flex items-center border p-4 rounded shadow-sm">
+      {/* Product thumbnail */}
       <img src={item.thumbnail} alt={item.title} className="w-24 h-24 object-cover mr-4" />
+
+      {/* Product details */}
       <div className="flex-1">
         <h2 className="text-lg font-semibold">{item.title}</h2>
         <p>Price: ${item.price}</p>
         <p>Quantity: {item.quantity}</p>
       </div>
+
+      {/* Remove from cart button */}
       <button
         onClick={() => dispatch(removeFromCart(item.id))}
         className="bg-red-500 text-white px-3 py-1 rounded"
@@ -23,4 +28,3 @@ const CartItem = ({ item }) => {
 };
 
 export default CartItem;
-

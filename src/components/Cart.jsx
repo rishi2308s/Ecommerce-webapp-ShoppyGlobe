@@ -2,13 +2,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart } from '../redux/cartSlice';
 
 const Cart = () => {
-  const cart = useSelector(state => state.cart.items);
+  const cart = useSelector(state => state.cart.items); // Get cart items
   const dispatch = useDispatch();
 
   return (
     <div className="p-4">
       <h2 className="text-xl font-bold mb-4">Shopping Cart</h2>
 
+      {/* Display empty message or list of cart items */}
       {cart.length === 0 ? (
         <p>Your cart is empty</p>
       ) : (
@@ -30,4 +31,5 @@ const Cart = () => {
 };
 
 export default Cart;
+
 
